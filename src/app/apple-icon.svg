@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="PentAi">
+  <rect width="180" height="180" rx="40" fill="#FFFFFF"/>
+  <defs>
+    <radialGradient id="sparkle" cx="44%" cy="40%" r="56%">
+      <stop offset="0%" stop-color="#F7ECFC"/>
+      <stop offset="38%" stop-color="#B77DDD"/>
+      <stop offset="100%" stop-color="#7938B2"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7938B2"/>
+      <stop offset="100%" stop-color="#301A3A"/>
+    </linearGradient>
+  </defs>
+  <path
+    fill="url(#sparkle)"
+    d="M77.6 51.8 86.8 82.2 118.8 90 86.8 97.8 77.6 128.2 68.4 97.8 36.4 90 68.4 82.2 77.6 51.8Z"
+  />
+  <rect x="114.8" y="121.6" width="13" height="37.2" rx="3.1" fill="url(#bar)"/>
+</svg>

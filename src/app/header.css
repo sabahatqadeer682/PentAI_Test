@@ -1,0 +1,293 @@
+/* Figma desktop-header 1:810 — blur 4px, 1280×64 */
+/* Mobile header — sticky glass bar + polished drawer */
+@media (max-width: 1023px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding-top: max(12px, env(safe-area-inset-top, 0px));
+    padding-right: 16px !important;
+    padding-bottom: 12px;
+    padding-left: 16px !important;
+    background: transparent;
+  }
+
+  .site-header--menu-open {
+    background: rgba(28, 28, 28, 0.94);
+  }
+
+  .site-header-bar {
+    height: auto !important;
+    min-height: 52px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(32, 32, 32, 0.88);
+    backdrop-filter: blur(16px) saturate(1.15);
+    -webkit-backdrop-filter: blur(16px) saturate(1.15);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .site-header-bar {
+    justify-content: space-between;
+  }
+
+  .site-header-brand-row {
+    gap: 0;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .site-header-logo-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .header-actions {
+    margin-left: 0;
+  }
+
+  .site-header-dashboard-wrap,
+  .header-btn-dashboard {
+    display: none !important;
+  }
+
+  .site-header-logo {
+    transform: scale(0.86);
+    transform-origin: left center;
+  }
+
+  .site-header-menu-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .site-header-menu-btn:active {
+    transform: scale(0.96);
+  }
+
+  .site-header-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .site-header-menu-btn--open {
+    background: rgba(121, 56, 178, 0.22);
+    border-color: rgba(183, 125, 221, 0.35);
+  }
+
+  .site-header-menu-line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 1px;
+    background: #ecedee;
+    transition:
+      transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s ease,
+      width 0.2s ease;
+  }
+
+  .site-header-menu-btn--open .site-header-menu-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .site-header-menu-btn--open .site-header-menu-line:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+
+  .site-header-menu-btn--open .site-header-menu-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .site-header-backdrop {
+    z-index: 35;
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .site-header-drawer {
+    max-height: min(78vh, 420px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: rgba(30, 30, 30, 0.97);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    box-shadow:
+      0 24px 56px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .site-header-drawer-link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+
+  .site-header-drawer-link--active {
+    background: rgba(121, 56, 178, 0.18);
+    box-shadow: inset 3px 0 0 #b77ddd;
+    color: #ffffff;
+  }
+
+  .site-header-drawer-link:not(.site-header-drawer-link--active):active {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .site-header-drawer-link--dashboard {
+    margin-top: 4px;
+    background: rgba(121, 56, 178, 0.22);
+    box-shadow: inset 0 0 0 1px rgba(183, 125, 221, 0.28);
+    font-weight: 600;
+  }
+
+  .site-header-drawer-link--dashboard:active {
+    background: rgba(121, 56, 178, 0.32);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header-drawer {
+    display: none !important;
+  }
+
+  .site-header-backdrop {
+    display: none !important;
+  }
+}
+
+/* Figma layout_LFQG6J — logo ↔ nav gap 40px (desktop only) */
+@media (min-width: 1024px) {
+  .site-header-bar {
+    gap: var(--header-logo-nav-gap, 40px);
+  }
+
+  .site-header-desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--header-nav-inner-gap, 4px);
+    height: var(--header-nav-height, 64px);
+    min-width: 0;
+  }
+
+  .site-header-dashboard-wrap {
+    display: flex !important;
+  }
+}
+
+/* Figma layout_7P5AM0 — nav row */
+.header-nav {
+  align-items: center;
+}
+
+/* Figma layout_3ZDZHR — Input/Large Semi Bold, padding 0 40px, h 64 */
+.type-header-nav {
+  font-size: var(--header-nav-font-size, 18px);
+  font-weight: var(--header-nav-font-weight, 600);
+  line-height: var(--header-nav-line-height, 24px);
+  letter-spacing: var(--header-nav-letter-spacing, 0.005em);
+}
+
+.header-nav-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-nav-link-height, 64px);
+  padding-left: var(--header-nav-padding-x, 40px);
+  padding-right: var(--header-nav-padding-x, 40px);
+  white-space: nowrap;
+}
+
+/* Figma active nav link (Home) — auto-width (text-snug), padding 0 10, gap 8, rounded-full */
+.header-nav-link.header-nav-link--active {
+  width: auto;
+  height: var(--header-nav-link-active-height, 64px);
+  padding-left: var(--header-nav-link-active-padding-x, 10px);
+  padding-right: var(--header-nav-link-active-padding-x, 10px);
+  gap: var(--header-nav-link-active-gap, 8px);
+  border-radius: var(--header-nav-link-active-radius, 9999px);
+}
+
+/* Figma inactive nav link (SecrtChat / GenPen / Contact) — auto-width (text-snug), padding 0 10, gap 8, rounded-full, disabled */
+.header-nav .header-nav-link:not(.header-nav-link--active) {
+  width: auto;
+  height: var(--header-nav-link-inactive-height, 64px);
+  padding-left: var(--header-nav-link-inactive-padding-x, 10px);
+  padding-right: var(--header-nav-link-inactive-padding-x, 10px);
+  gap: var(--header-nav-link-inactive-gap, 8px);
+  border-radius: var(--header-nav-link-inactive-radius, 9999px);
+}
+
+/* Figma layout_BVSFDW — dashboard side gap 16px */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--header-actions-gap, 16px);
+}
+
+/* Figma layout_UIIW3Q — Dashboard Input/Medium Semi Bold, h 48, px 24 */
+.header-btn-dashboard {
+  height: var(--header-dashboard-height, 48px) !important;
+  min-height: var(--header-dashboard-height, 48px);
+  padding-left: var(--header-dashboard-padding-x, 24px) !important;
+  padding-right: var(--header-dashboard-padding-x, 24px) !important;
+  font-size: var(--header-dashboard-font-size, 15px) !important;
+  font-weight: 600;
+  line-height: var(--header-dashboard-line-height, 20px);
+  letter-spacing: 0.005em;
+}
+
+/* Small-mobile (<768px) header overrides */
+@media (max-width: 767px) {
+  .site-header {
+    padding-top: max(10px, env(safe-area-inset-top, 0px));
+    padding-right: 14px !important;
+    padding-bottom: 10px;
+    padding-left: 14px !important;
+  }
+
+  .site-header-bar {
+    min-height: 48px;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .site-header-logo {
+    transform: scale(0.8);
+  }
+
+  .site-header-menu-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .site-header-drawer-link {
+    font-size: 14px;
+    min-height: 44px;
+  }
+}
